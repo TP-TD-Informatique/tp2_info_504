@@ -170,6 +170,33 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp2.dir/build.make CMakeFiles/tp2.dir/main.c.s
 .PHONY : main.c.s
 
+tp2-traini-tableau.o: tp2-traini-tableau.c.o
+
+.PHONY : tp2-traini-tableau.o
+
+# target to build an object file
+tp2-traini-tableau.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp2.dir/build.make CMakeFiles/tp2.dir/tp2-traini-tableau.c.o
+.PHONY : tp2-traini-tableau.c.o
+
+tp2-traini-tableau.i: tp2-traini-tableau.c.i
+
+.PHONY : tp2-traini-tableau.i
+
+# target to preprocess a source file
+tp2-traini-tableau.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp2.dir/build.make CMakeFiles/tp2.dir/tp2-traini-tableau.c.i
+.PHONY : tp2-traini-tableau.c.i
+
+tp2-traini-tableau.s: tp2-traini-tableau.c.s
+
+.PHONY : tp2-traini-tableau.s
+
+# target to generate assembly for a file
+tp2-traini-tableau.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp2.dir/build.make CMakeFiles/tp2.dir/tp2-traini-tableau.c.s
+.PHONY : tp2-traini-tableau.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -182,6 +209,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... tp2-traini-tableau.o"
+	@echo "... tp2-traini-tableau.i"
+	@echo "... tp2-traini-tableau.s"
 .PHONY : help
 
 

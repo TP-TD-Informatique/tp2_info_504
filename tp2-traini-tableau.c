@@ -5,11 +5,4 @@
  *
  * Kevin Traini
 **/
-#include <stdio.h>
-
 #include "tp2-traini-tableau.h"
-
-int main() {
-    printf("Hello world!\n");
-    return 0;
-}

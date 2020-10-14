@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/tp2.dir/main.c.o  -o tp2 
+/usr/bin/cc -g   CMakeFiles/tp2.dir/main.c.o CMakeFiles/tp2.dir/tp2-traini-tableau.c.o  -o tp2 
