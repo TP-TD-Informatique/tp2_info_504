@@ -32,13 +32,24 @@ void initialiseGrille(Grille grille);
 // Renvoie le caractère à la position ligne,colonne dans la grille
 char lireCase(Grille grille, int ligne, int colonne);
 
+// Ecris dans la grille
+void ecrireCase(Grille grille, int ligne, int colonne, char c);
+
 // Affiche la grille
 void afficheGrille(Grille grille);
+
+// Renvoie la hauteur de la colonne la plus haute de la grille dans l'interval donné
+int hauteurPlat(Grille grille, int debut, int fin);
+
+// _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-.
 
 // Initialise les pièces
 void initialisePieces(Piece pieces[NB_PIECES]);
 
 // Affiche la pièce avec une flèche en dessous
 void affichePiece(Piece piece);
+
+// Ecris la piece dans la grille à la colonne demandée
+void ecrirePiece(Grille grille, Piece piece, int colonne, int hauteur);
 
 #endif //TP2_TP2_TRAINI_TABLEAU_H

@@ -17,7 +17,7 @@ int main() {
     Grille grille;
     initialiseGrille(grille);
 
-    affichePiece(pieces[3]);
+    ecrirePiece(grille, pieces[1], 2, 2);
     afficheGrille(grille);
 
     return 0;

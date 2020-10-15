@@ -21,11 +21,18 @@ char lireCase(Grille grille, int ligne, int colonne) {
     return ' ';
 }
 
+void ecrireCase(Grille grille, int ligne, int colonne, char c) {
+    if ((colonne < LARGEUR && colonne >= 0) && (ligne < HAUTEUR && ligne >= 0))
+        grille[ligne][colonne] = c;
+    else
+        printf("Impossible d'écrire ici (%d:%d)", ligne, colonne);
+}
+
 void afficheGrille(Grille grille) {
     // Impression de la grille
     for (int i = HAUTEUR - 1; i >= 0; i--) {
         printf("||");
-        for (int j = LARGEUR - 1; j >= 0; j--) {
+        for (int j = 0; j < LARGEUR; j++) {
             printf("%c", lireCase(grille, i, j));
         }
         printf("||\n");
@@ -49,6 +56,24 @@ void afficheGrille(Grille grille) {
         printf("\n");
     }
 }
+
+int hauteurPlat(Grille grille, int debut, int fin) {
+    int max = 0;
+
+    if (debut <= fin && (debut >= 0 && debut < LARGEUR) && (fin >= 0 && fin < LARGEUR)) {
+        for (int c = debut; c <= fin; ++c) {
+            int i = 0;
+            while (grille[c][i] != ' ' && i < HAUTEUR) i++;
+            if (i > max)
+                max = i;
+        }
+    } else
+        printf("L'interval (%d:%d) n'est pas correct", debut, fin);
+
+    return max;
+}
+
+// _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-.
 
 void initialisePieces(Piece pieces[NB_PIECES]) {
     pieces[0].hauteur = 4;
@@ -77,8 +102,19 @@ void initialisePieces(Piece pieces[NB_PIECES]) {
 }
 
 void affichePiece(Piece piece) {
-    for (int i = piece.hauteur - 1; i >= 0; i--) {
+    for (int i = piece.hauteur - 1; i >= 0; i--)
         printf("%s\n", piece.forme[i]);
-    }
     printf("↑\n");
+}
+
+void ecrirePiece(Grille grille, Piece piece, int colonne, int hauteur) {
+    if ((piece.largeur + colonne < LARGEUR) && (piece.hauteur + hauteur < HAUTEUR)) {
+        for (int i = 0; i < piece.hauteur; ++i) {
+            for (int j = 0; j < piece.largeur; ++j) {
+                if (piece.forme[i][j] != ' ') ecrireCase(grille, hauteur + i, colonne + j, piece.forme[i][j]);
+            }
+        }
+    } else {
+        printf("Impossible d'écrire la pièce ici (%d,%d)", colonne, hauteur);
+    }
 }
