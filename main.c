@@ -39,8 +39,6 @@ int main() {
                 affichePiece(piece);
             }
         }
-        //printf("Choisissez une colonne ? ");
-        //scanf("%d", &colonne);
 
         if (colonne == -1) continuer = false;
         else {

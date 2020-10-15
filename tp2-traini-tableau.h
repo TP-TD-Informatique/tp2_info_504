@@ -15,7 +15,7 @@
 // Définition des constantes
 #define HAUTEUR 10
 #define LARGEUR 15
-#define NB_PIECES 8
+#define NB_PIECES 7
 #define HAUTEUR_MAX_DES_PIECES 4
 
 // Définition des structures de données

@@ -22,6 +22,6 @@ Question 3.7
 
 Question 3.8
 
-Question 3.9
+Question 3.9 Difficultés à trouver la bonne hauteur. La fonction renvoie la bonne valeur et parfois dans le même cas elle ne renvoie pas la bonne valeur
 
 Question 3.10

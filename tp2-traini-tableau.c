@@ -102,10 +102,9 @@ int videSousPiece(Piece piece, int colonne) {
 int hauteurExacte(Grille grille, int colonne, Piece piece) {
     int max = 0; // La hauteur max de la colonne
     int bas = 0; // Le vide sous la pièce
-    int c = 0; // La colonne courante de la pièce
     for (int i = colonne; i < colonne + piece.largeur; ++i) {
         int hauteurC = hauteurPlat(grille, i, i);
-        int hauteurP = hauteurPiece(piece, c++);
+        int hauteurP = hauteurPiece(piece, i - colonne);
 
         if (hauteurP + hauteurC > max) {
             max = hauteurC;
