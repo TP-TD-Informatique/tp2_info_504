@@ -109,7 +109,7 @@ void affichePiece(Piece piece) {
 }
 
 void ecrirePiece(Grille grille, Piece piece, int colonne, int hauteur) {
-    if ((piece.largeur + colonne <= LARGEUR) && (piece.hauteur + hauteur < HAUTEUR)) {
+    if ((piece.largeur + colonne <= LARGEUR) && (piece.hauteur + hauteur <= HAUTEUR)) {
         for (int i = 0; i < piece.hauteur; ++i) {
             for (int j = 0; j < piece.largeur; ++j) {
                 if (piece.forme[i][j] != ' ') ecrireCase(grille, hauteur + i, colonne + j, piece.forme[i][j]);

@@ -18,6 +18,7 @@ int main() {
     Grille grille;
     initialiseGrille(grille);
 
+    int nbPiece = 0;
     bool continuer = true;
     while (continuer) {
         Piece piece = pieceAleatoire(pieces);
@@ -30,9 +31,15 @@ int main() {
         if (colonne == -1) continuer = false;
         else {
             int hauteur = hauteurPlat(grille, colonne, colonne + piece.largeur - 1);
-            ecrirePiece(grille, piece, colonne, hauteur);
+            if (hauteur + piece.hauteur - 1 >= HAUTEUR) {
+                continuer = false;
+            } else {
+                ecrirePiece(grille, piece, colonne, hauteur);
+                nbPiece++;
+            }
         }
     }
+    printf("! PERDU ! Vous avez réussi à placer %d pièces", nbPiece);
 
     return 0;
 }
