@@ -8,6 +8,9 @@
 #ifndef TP2_TP2_TRAINI_TABLEAU_H
 #define TP2_TP2_TRAINI_TABLEAU_H
 
+#include <stdio.h>
+#include <stdlib.h>
+
 // Définition des constantes
 #define HAUTEUR 10
 #define LARGEUR 15
@@ -23,6 +26,14 @@ typedef struct {
 
 typedef char Grille[HAUTEUR][LARGEUR];
 
+// Initialise la grille de jeu
+void initialiseGrille(Grille grille);
+
+// Renvoie le caractère à la position ligne,colonne dans la grille
+char lireCase(Grille grille, int ligne, int colonne);
+
+// Affiche la grille
+void afficheGrille(Grille grille);
 
 
 #endif //TP2_TP2_TRAINI_TABLEAU_H
