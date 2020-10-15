@@ -15,7 +15,7 @@
 // Définition des constantes
 #define HAUTEUR 10
 #define LARGEUR 15
-#define NB_PIECES 5
+#define NB_PIECES 8
 #define HAUTEUR_MAX_DES_PIECES 4
 
 // Définition des structures de données
@@ -41,6 +41,9 @@ void afficheGrille(Grille grille);
 
 // Renvoie la hauteur de la colonne la plus haute de la grille dans l'interval donné
 int hauteurPlat(Grille grille, int debut, int fin);
+
+// Renvoie la hauteur exacte ou peut aller la pièce
+int hauteurExacte(Grille grille, int colonne, Piece piece);
 
 // Supprime la ligne et descend toutes les lignes supérieures
 void supprimerLigne(Grille grille, int ligne);

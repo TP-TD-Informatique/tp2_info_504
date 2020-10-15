@@ -31,12 +31,13 @@ int main() {
 
         if (colonne == -1) continuer = false;
         else {
-            int hauteur = hauteurPlat(grille, colonne, colonne + piece.largeur - 1);
-            if (hauteur + piece.hauteur - 1 >= HAUTEUR) {
+            //int hauteur = hauteurPlat(grille, colonne, colonne + piece.largeur - 1);
+            int hauteur2 = hauteurExacte(grille, colonne, piece);
+            if (hauteur2 + piece.hauteur - 1 >= HAUTEUR) {
                 continuer = false;
                 printf("! PERDU ! Vous avez réussi à placer %d pièces\n", nbPiece);
             } else {
-                ecrirePiece(grille, piece, colonne, hauteur);
+                ecrirePiece(grille, piece, colonne, hauteur2);
                 score += nettoyer(grille);
                 nbPiece++;
             }
@@ -44,5 +45,5 @@ int main() {
     }
     printf("Votre score : %d\n", score);
 
-    return 0;
+    return EXIT_SUCCESS;
 }
