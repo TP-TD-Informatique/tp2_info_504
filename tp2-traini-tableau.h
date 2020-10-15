@@ -19,11 +19,14 @@
 #define HAUTEUR_MAX_DES_PIECES 4
 
 // Définition des structures de données
-typedef struct {
+struct SPiece {
     int hauteur;
     int largeur;
     char *forme[HAUTEUR_MAX_DES_PIECES];
-} Piece;
+    struct SPiece* rotG;
+    struct SPiece* rotD;
+};
+typedef struct SPiece Piece;
 
 typedef char Grille[HAUTEUR][LARGEUR];
 

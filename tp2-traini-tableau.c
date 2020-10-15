@@ -92,28 +92,26 @@ int hauteurPiece(Piece piece, int colonne) {
 int videSousPiece(Piece piece, int colonne) {
     int vide = 0;
     if (colonne >= 0 && colonne < piece.largeur) { // Si la colonne est dans la pièce
-        while (piece.forme[vide][colonne] == ' ' && vide < piece.hauteur) vide++; // Tant qu'on n'a pas atteint le dessous de la pièce
+        while (piece.forme[vide][colonne] == ' ' && vide < piece.hauteur)
+            vide++; // Tant qu'on n'a pas atteint le dessous de la pièce
     }
 
     return vide;
 }
 
 int hauteurExacte(Grille grille, int colonne, Piece piece) {
-    int max = 0;
-    int bas = 0;
-    if (colonne >= 0 && colonne + piece.largeur <= HAUTEUR) {
-        int c = 0;
-        for (int i = colonne; i < colonne + piece.largeur; ++i) {
-            int hauteurC = hauteurPlat(grille, i, i);
-            int hauteurP = hauteurPiece(piece, c++);
+    int max = 0; // La hauteur max de la colonne
+    int bas = 0; // Le vide sous la pièce
+    int c = 0; // La colonne courante de la pièce
+    for (int i = colonne; i < colonne + piece.largeur; ++i) {
+        int hauteurC = hauteurPlat(grille, i, i);
+        int hauteurP = hauteurPiece(piece, c++);
 
-            if (hauteurP + hauteurC > max) {
-                max = hauteurC;
-                bas = videSousPiece(piece, i);
-            }
+        if (hauteurP + hauteurC > max) {
+            max = hauteurC;
+            bas = videSousPiece(piece, i);
         }
-    } else
-        printf("La pièce ne peut être placée à la colonne %d\n", colonne);
+    }
 
     printf("%d\n", max);
     return max - bas;
@@ -160,43 +158,58 @@ int nettoyer(Grille grille) {
 // _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-.
 
 void initialisePieces(Piece pieces[NB_PIECES]) {
-    pieces[0].hauteur = 4;
+    // Ajout des formes de pièces
+    pieces[0].hauteur = 2;
     pieces[0].largeur = 2;
-    pieces[0].forme[3] = "# ";
-    pieces[0].forme[2] = "# ";
-    pieces[0].forme[1] = "# ";
-    pieces[0].forme[0] = "##";
+    pieces[0].forme[1] = "%%";
+    pieces[0].forme[0] = "%%";
+
     pieces[1].hauteur = 2;
     pieces[1].largeur = 3;
     pieces[1].forme[1] = " @ ";
     pieces[1].forme[0] = "@@@";
-    pieces[2].hauteur = 4;
-    pieces[2].largeur = 1;
-    pieces[2].forme[3] = "l";
-    pieces[2].forme[2] = "l";
-    pieces[2].forme[1] = "l";
-    pieces[2].forme[0] = "l";
-    pieces[3].hauteur = 2;
+    pieces[2].hauteur = 2;
+    pieces[2].largeur = 3;
+    pieces[2].forme[1] = "@@@";
+    pieces[2].forme[0] = " @ ";
+    pieces[3].hauteur = 3;
     pieces[3].largeur = 2;
-    pieces[3].forme[1] = "%%";
-    pieces[3].forme[0] = "%%";
-    pieces[4].hauteur = 1;
-    pieces[4].largeur = 1;
-    pieces[4].forme[0] = "O";
-    pieces[5].hauteur = 2;
-    pieces[5].largeur = 3;
-    pieces[5].forme[1] = "@@@";
-    pieces[5].forme[0] = " @ ";
-    pieces[6].hauteur = 3;
-    pieces[6].largeur = 2;
-    pieces[6].forme[2] = "LL";
-    pieces[6].forme[1] = " L";
-    pieces[6].forme[0] = " L";
-    pieces[7].hauteur = 3;
-    pieces[7].largeur = 2;
-    pieces[7].forme[2] = "Z ";
-    pieces[7].forme[1] = "ZZ";
-    pieces[7].forme[0] = " Z";
+    pieces[3].forme[2] = "@ ";
+    pieces[3].forme[1] = "@@";
+    pieces[3].forme[0] = "@ ";
+    pieces[4].hauteur = 3;
+    pieces[4].largeur = 2;
+    pieces[4].forme[2] = " @";
+    pieces[4].forme[1] = "@@";
+    pieces[4].forme[0] = " @";
+
+    pieces[5].hauteur = 4;
+    pieces[5].largeur = 1;
+    pieces[5].forme[3] = "l";
+    pieces[5].forme[2] = "l";
+    pieces[5].forme[1] = "l";
+    pieces[5].forme[0] = "l";
+    pieces[6].hauteur = 1;
+    pieces[6].largeur = 4;
+    pieces[6].forme[0] = "llll";
+
+    // Ajout des rotations
+    pieces[0].rotG = &pieces[0];
+    pieces[0].rotD = &pieces[0];
+
+    pieces[1].rotG = &pieces[4];
+    pieces[1].rotD = &pieces[3];
+    pieces[2].rotG = &pieces[3];
+    pieces[2].rotD = &pieces[4];
+    pieces[3].rotG = &pieces[1];
+    pieces[3].rotD = &pieces[2];
+    pieces[4].rotG = &pieces[2];
+    pieces[4].rotD = &pieces[1];
+
+    pieces[5].rotG = &pieces[6];
+    pieces[5].rotD = &pieces[6];
+    pieces[6].rotG = &pieces[5];
+    pieces[6].rotD = &pieces[5];
 }
 
 void affichePiece(Piece piece) {

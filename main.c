@@ -26,8 +26,21 @@ int main() {
         affichePiece(piece);
         afficheGrille(grille);
         int colonne;
-        printf("Choisissez une colonne ? ");
-        scanf("%d", &colonne);
+        char str[8];
+        while (1) {
+            printf("(g)auche, (d)roite ou (0-%d) colonne: ", LARGEUR - 1);
+            if (scanf("%7s", str) == 1) {
+                if (str[0] == 'g') piece = *(piece.rotG);
+                else if (str[0] == 'd') piece = *(piece.rotD);
+                else {
+                    colonne = atoi(str);
+                    break;
+                }
+                affichePiece(piece);
+            }
+        }
+        //printf("Choisissez une colonne ? ");
+        //scanf("%d", &colonne);
 
         if (colonne == -1) continuer = false;
         else {
