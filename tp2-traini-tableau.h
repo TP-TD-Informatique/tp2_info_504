@@ -14,7 +14,7 @@
 // Définition des constantes
 #define HAUTEUR 10
 #define LARGEUR 15
-#define NB_PIECES 4
+#define NB_PIECES 5
 #define HAUTEUR_MAX_DES_PIECES 4
 
 // Définition des structures de données
@@ -35,5 +35,10 @@ char lireCase(Grille grille, int ligne, int colonne);
 // Affiche la grille
 void afficheGrille(Grille grille);
 
+// Initialise les pièces
+void initialisePieces(Piece pieces[NB_PIECES]);
+
+// Affiche la pièce avec une flèche en dessous
+void affichePiece(Piece piece);
 
 #endif //TP2_TP2_TRAINI_TABLEAU_H

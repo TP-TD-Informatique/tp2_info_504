@@ -10,8 +10,14 @@
 #include "tp2-traini-tableau.h"
 
 int main() {
+    // Initialisation des pièces
+    Piece pieces[NB_PIECES];
+    initialisePieces(pieces);
+    // Initialisation de la grille
     Grille grille;
     initialiseGrille(grille);
+
+    affichePiece(pieces[3]);
     afficheGrille(grille);
 
     return 0;

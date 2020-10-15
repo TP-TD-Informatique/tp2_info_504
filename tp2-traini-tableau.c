@@ -49,3 +49,36 @@ void afficheGrille(Grille grille) {
         printf("\n");
     }
 }
+
+void initialisePieces(Piece pieces[NB_PIECES]) {
+    pieces[0].hauteur = 4;
+    pieces[0].largeur = 2;
+    pieces[0].forme[3] = "# ";
+    pieces[0].forme[2] = "# ";
+    pieces[0].forme[1] = "# ";
+    pieces[0].forme[0] = "##";
+    pieces[1].hauteur = 2;
+    pieces[1].largeur = 3;
+    pieces[1].forme[1] = " @ ";
+    pieces[1].forme[0] = "@@@";
+    pieces[2].hauteur = 4;
+    pieces[2].largeur = 1;
+    pieces[2].forme[3] = "l";
+    pieces[2].forme[2] = "l";
+    pieces[2].forme[1] = "l";
+    pieces[2].forme[0] = "l";
+    pieces[3].hauteur = 2;
+    pieces[3].largeur = 2;
+    pieces[3].forme[1] = "%%";
+    pieces[3].forme[0] = "%%";
+    pieces[4].hauteur = 1;
+    pieces[4].largeur = 1;
+    pieces[4].forme[0] = "O";
+}
+
+void affichePiece(Piece piece) {
+    for (int i = piece.hauteur - 1; i >= 0; i--) {
+        printf("%s\n", piece.forme[i]);
+    }
+    printf("↑\n");
+}
