@@ -6,6 +6,7 @@
  * Kevin Traini
 **/
 #include <stdio.h>
+#include <stdbool.h>
 
 #include "tp2-traini-tableau.h"
 
@@ -17,8 +18,21 @@ int main() {
     Grille grille;
     initialiseGrille(grille);
 
-    ecrirePiece(grille, pieces[1], 2, 2);
-    afficheGrille(grille);
+    bool continuer = true;
+    while (continuer) {
+        Piece piece = pieceAleatoire(pieces);
+        affichePiece(piece);
+        afficheGrille(grille);
+        int colonne;
+        printf("Choisissez une colonne ? ");
+        scanf("%d", &colonne);
+
+        if (colonne == -1) continuer = false;
+        else {
+            int hauteur = hauteurPlat(grille, colonne, colonne + piece.largeur - 1);
+            ecrirePiece(grille, piece, colonne, hauteur);
+        }
+    }
 
     return 0;
 }

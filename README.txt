@@ -15,3 +15,5 @@ Question 3.3
 Question 3.4
 
 Question 3.5
+
+Question 3.6

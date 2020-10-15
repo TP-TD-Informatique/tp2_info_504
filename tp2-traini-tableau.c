@@ -5,6 +5,7 @@
  *
  * Kevin Traini
 **/
+#include <time.h>
 #include "tp2-traini-tableau.h"
 
 void initialiseGrille(Grille grille) {
@@ -25,7 +26,7 @@ void ecrireCase(Grille grille, int ligne, int colonne, char c) {
     if ((colonne < LARGEUR && colonne >= 0) && (ligne < HAUTEUR && ligne >= 0))
         grille[ligne][colonne] = c;
     else
-        printf("Impossible d'écrire ici (%d:%d)", ligne, colonne);
+        printf("Impossible d'écrire ici (%d:%d)\n", ligne, colonne);
 }
 
 void afficheGrille(Grille grille) {
@@ -63,12 +64,12 @@ int hauteurPlat(Grille grille, int debut, int fin) {
     if (debut <= fin && (debut >= 0 && debut < LARGEUR) && (fin >= 0 && fin < LARGEUR)) {
         for (int c = debut; c <= fin; ++c) {
             int i = 0;
-            while (grille[c][i] != ' ' && i < HAUTEUR) i++;
-            if (i > max)
-                max = i;
+            while (grille[i][c] != ' ' && i < HAUTEUR) i++;
+
+            if (i > max) max = i;
         }
     } else
-        printf("L'interval (%d:%d) n'est pas correct", debut, fin);
+        printf("L'interval (%d:%d) n'est pas correct\n", debut, fin);
 
     return max;
 }
@@ -108,13 +109,19 @@ void affichePiece(Piece piece) {
 }
 
 void ecrirePiece(Grille grille, Piece piece, int colonne, int hauteur) {
-    if ((piece.largeur + colonne < LARGEUR) && (piece.hauteur + hauteur < HAUTEUR)) {
+    if ((piece.largeur + colonne <= LARGEUR) && (piece.hauteur + hauteur < HAUTEUR)) {
         for (int i = 0; i < piece.hauteur; ++i) {
             for (int j = 0; j < piece.largeur; ++j) {
                 if (piece.forme[i][j] != ' ') ecrireCase(grille, hauteur + i, colonne + j, piece.forme[i][j]);
             }
         }
     } else {
-        printf("Impossible d'écrire la pièce ici (%d,%d)", colonne, hauteur);
+        printf("Impossible d'écrire la pièce ici (%d,%d)\n", colonne, hauteur);
     }
+}
+
+Piece pieceAleatoire(Piece pieces[NB_PIECES]) {
+    srand(time(0));
+    int alea = (int) (((double) random() / ((double) RAND_MAX)) * (NB_PIECES));
+    return pieces[alea];
 }

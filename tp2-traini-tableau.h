@@ -52,4 +52,7 @@ void affichePiece(Piece piece);
 // Ecris la piece dans la grille à la colonne demandée
 void ecrirePiece(Grille grille, Piece piece, int colonne, int hauteur);
 
+// Tire une pièce aléatoirement dans le tableau de pièces
+Piece pieceAleatoire(Piece pieces[NB_PIECES]);
+
 #endif //TP2_TP2_TRAINI_TABLEAU_H
