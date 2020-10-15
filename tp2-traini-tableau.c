@@ -74,6 +74,44 @@ int hauteurPlat(Grille grille, int debut, int fin) {
     return max;
 }
 
+void supprimerLigne(Grille grille, int ligne) {
+    if (ligne < HAUTEUR && ligne >= 0) {
+        for (int i = 0; i < LARGEUR; ++i) {
+            grille[ligne][i] = ' ';
+        }
+
+        for (int i = ligne; i < HAUTEUR - 1; ++i) {
+            for (int j = 0; j < LARGEUR; ++j) {
+                grille[i][j] = grille[i + 1][j];
+            }
+        }
+    } else
+        printf("Impossible de supprimer la ligne %d\n", ligne);
+}
+
+bool lignePleine(Grille grille, int ligne) {
+    if (ligne >= 0 && ligne < HAUTEUR) {
+        for (int i = 0; i < LARGEUR; ++i) {
+            if (grille[ligne][i] == ' ') return false;
+        }
+    } else
+        return false;
+
+    return true;
+}
+
+int nettoyer(Grille grille) {
+    int result = 0;
+    for (int i = 0; i < HAUTEUR; ++i) {
+        if (lignePleine(grille, i)) {
+            result++;
+            supprimerLigne(grille, i);
+        }
+    }
+
+    return result;
+}
+
 // _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-.
 
 void initialisePieces(Piece pieces[NB_PIECES]) {

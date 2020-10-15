@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 // Définition des constantes
 #define HAUTEUR 10
@@ -40,6 +41,12 @@ void afficheGrille(Grille grille);
 
 // Renvoie la hauteur de la colonne la plus haute de la grille dans l'interval donné
 int hauteurPlat(Grille grille, int debut, int fin);
+
+// Supprime la ligne et descend toutes les lignes supérieures
+void supprimerLigne(Grille grille, int ligne);
+
+// Nettoie la grille de toutes les lignes pleines
+int nettoyer(Grille grille);
 
 // _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-.
 
