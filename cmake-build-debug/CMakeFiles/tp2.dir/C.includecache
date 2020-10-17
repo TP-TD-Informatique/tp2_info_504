@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/kevin/DATA/Univ/semestre5/info504/tp2/main.c
-stdio.h
--
-stdbool.h
--
-tp2-traini-tableau.h
-/home/kevin/DATA/Univ/semestre5/info504/tp2/tp2-traini-tableau.h
-
 /home/kevin/DATA/Univ/semestre5/info504/tp2/tp2-traini-tableau.c
 time.h
 -

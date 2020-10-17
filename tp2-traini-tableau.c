@@ -108,11 +108,10 @@ int hauteurExacte(Grille grille, int colonne, Piece piece) {
 
         if (hauteurP + hauteurC > max) {
             max = hauteurC;
-            bas = videSousPiece(piece, i);
+            bas = videSousPiece(piece, i - colonne);
         }
     }
 
-    printf("%d\n", max);
     return max - bas;
 }
 
@@ -144,7 +143,7 @@ bool lignePleine(Grille grille, int ligne) {
 
 int nettoyer(Grille grille) {
     int result = 0;
-    for (int i = 0; i < HAUTEUR; ++i) { // Pour chaque ligne de la grille
+    for (int i = HAUTEUR -1; i >= 0; i--) { // Pour chaque ligne de la grille en partant d'en haut
         if (lignePleine(grille, i)) { // Si la ligne est pleine
             result++; // +1 au score
             supprimerLigne(grille, i); // Supprime cette ligne et décale vers le bas les lignes supérieures

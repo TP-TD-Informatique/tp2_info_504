@@ -10,7 +10,7 @@
 
 #include "tp2-traini-tableau.h"
 
-int main() {
+void tableau() {
     // Initialisation des pièces
     Piece pieces[NB_PIECES];
     initialisePieces(pieces);
@@ -55,6 +55,10 @@ int main() {
         }
     }
     printf("Votre score : %d\n", score);
+}
+
+int main() {
+    tableau();
 
     return EXIT_SUCCESS;
 }
