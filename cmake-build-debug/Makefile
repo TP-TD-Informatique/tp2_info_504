@@ -143,6 +143,33 @@ tp2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp2.dir/build.make CMakeFiles/tp2.dir/build
 .PHONY : tp2/fast
 
+Liste.o: Liste.c.o
+
+.PHONY : Liste.o
+
+# target to build an object file
+Liste.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp2.dir/build.make CMakeFiles/tp2.dir/Liste.c.o
+.PHONY : Liste.c.o
+
+Liste.i: Liste.c.i
+
+.PHONY : Liste.i
+
+# target to preprocess a source file
+Liste.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp2.dir/build.make CMakeFiles/tp2.dir/Liste.c.i
+.PHONY : Liste.c.i
+
+Liste.s: Liste.c.s
+
+.PHONY : Liste.s
+
+# target to generate assembly for a file
+Liste.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp2.dir/build.make CMakeFiles/tp2.dir/Liste.c.s
+.PHONY : Liste.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -206,6 +233,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... tp2"
+	@echo "... Liste.o"
+	@echo "... Liste.i"
+	@echo "... Liste.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

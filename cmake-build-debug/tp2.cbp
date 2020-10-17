@@ -76,6 +76,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/kevin/DATA/Univ/semestre5/info504/tp2/Liste.c">
+			<Option target="tp2"/>
+		</Unit>
+		<Unit filename="/home/kevin/DATA/Univ/semestre5/info504/tp2/Liste.h">
+			<Option target="tp2"/>
+		</Unit>
 		<Unit filename="/home/kevin/DATA/Univ/semestre5/info504/tp2/main.c">
 			<Option target="tp2"/>
 		</Unit>

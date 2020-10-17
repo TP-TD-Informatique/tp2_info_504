@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/tp2.dir/Liste.c.o"
   "CMakeFiles/tp2.dir/main.c.o"
   "CMakeFiles/tp2.dir/tp2-traini-tableau.c.o"
   "tp2"
