@@ -4,6 +4,13 @@
 CMakeFiles/tp2.dir/Liste.c.o: ../Liste.c
 CMakeFiles/tp2.dir/Liste.c.o: ../Liste.h
 
-CMakeFiles/tp2.dir/test-Liste.c.o: ../Liste.h
-CMakeFiles/tp2.dir/test-Liste.c.o: ../test-Liste.c
+CMakeFiles/tp2.dir/main.c.o: ../main.c
+CMakeFiles/tp2.dir/main.c.o: ../tp2-traini-tableau.h
+
+CMakeFiles/tp2.dir/tp2-traini-liste.c.o: ../Liste.h
+CMakeFiles/tp2.dir/tp2-traini-liste.c.o: ../tp2-traini-liste.c
+CMakeFiles/tp2.dir/tp2-traini-liste.c.o: ../tp2-traini-liste.h
+
+CMakeFiles/tp2.dir/tp2-traini-tableau.c.o: ../tp2-traini-tableau.c
+CMakeFiles/tp2.dir/tp2-traini-tableau.c.o: ../tp2-traini-tableau.h
 

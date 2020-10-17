@@ -6,17 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/kevin/DATA/Univ/semestre5/info504/tp2/Liste.c
-Liste.h
-/home/kevin/DATA/Univ/semestre5/info504/tp2/Liste.h
-
-/home/kevin/DATA/Univ/semestre5/info504/tp2/Liste.h
-stdlib.h
--
-
-/home/kevin/DATA/Univ/semestre5/info504/tp2/test-Liste.c
+/home/kevin/DATA/Univ/semestre5/info504/tp2/main.c
 stdio.h
 -
-Liste.h
-/home/kevin/DATA/Univ/semestre5/info504/tp2/Liste.h
+stdbool.h
+-
+tp2-traini-tableau.h
+/home/kevin/DATA/Univ/semestre5/info504/tp2/tp2-traini-tableau.h
+
+/home/kevin/DATA/Univ/semestre5/info504/tp2/tp2-traini-tableau.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
 
